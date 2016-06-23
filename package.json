@@ -1,0 +1,15 @@
+{
+  "name": "With-React",
+  "version": "0.0.0",
+  "description": "REACT and everything associated with him",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server"
+  },
+  "author": "Nick Burdo",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "http-server": "~0.9.0"
+  }
+}
