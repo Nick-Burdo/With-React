@@ -5,11 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "http-server"
+    "server": "http-server",
+    "start": "gulp"
   },
   "author": "Nick Burdo",
   "license": "BSD-2-Clause",
   "devDependencies": {
-    "http-server": "~0.9.0"
+    "http-server": "~0.9.0",
+    "gulp": "~3.9.1"
   }
 }

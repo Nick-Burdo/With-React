@@ -1,0 +1,27 @@
+@import "page-user";
+@import "page-wiget";
+
+.search-header {
+  padding: 20px;
+  font-size: 18px;
+  text-transform: uppercase;
+  border-bottom: solid 1px #bbb;
+}
+
+.search-results {
+  padding: 20px;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.search-footer {
+  padding: 20px;
+  font-size: 14px;
+  text-transform: uppercase;
+  border-top: solid 1px #bbb;
+  border-bottom: solid 1px #bbb;
+}

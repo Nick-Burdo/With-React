@@ -1,0 +1,18 @@
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.primary-header {
+  flex:1 100%;
+}
+
+.primary-aside {
+  width: 200px;
+}
+
+main {
+  flex: 1 0px;
+}
