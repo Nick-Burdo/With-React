@@ -11,37 +11,12 @@
 //var Link = window.ReactRouter.Link;
 //var browserHistory = window.ReactRouter.browserHistory;
 
-var { Router, Route, IndexRoute, Link, browserHistory } = window.ReactRouter;
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-var MainLayout = React.createClass({
-    render: function () {
-        return (
-            <div className="app">
-                <header className="primary-header">
-                    HEADER
-                </header>
+var { Router, Route, IndexRoute, Link, browserHistory } = require('react-router');
 
-                <aside className="primary-aside">
-                    <ul>
-                        <li>
-                            <Link to="/router" activeClassName="active">Home</Link>
-                        </li>
-                        <li>
-                            <Link to="/router/users" activeClassName="active">Users</Link>
-                        </li>
-                        <li>
-                            <Link to="/router/widgets" activeClassName="active">Widgets</Link>
-                        </li>
-                    </ul>
-                </aside>
-
-                <main>
-                    {this.props.children}
-                </main>
-            </div>
-        );
-    }
-});
+import MainLayout from './components/layout/MainLayout';
 
 var Home = React.createClass({
     render: function () {
@@ -99,7 +74,7 @@ var Widgetist = React.createClass({
 
 ReactDOM.render(
     <Router history={browserHistory}>
-        <Route path="router" component={MainLayout}>
+        <Route path="/" component={MainLayout}>
             <IndexRoute component={Home}/>
             <Route component={SearchLayout}>
                 <Route path="users" component={UserList}/>
