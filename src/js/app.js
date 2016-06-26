@@ -16,7 +16,7 @@ import ReactDOM from 'react-dom';
 
 var { Router, Route, IndexRoute, Link, browserHistory } = require('react-router');
 
-import MainLayout from './components/layout/MainLayout';
+import MainLayout from './components/layout-main';
 
 var Home = React.createClass({
     render: function () {

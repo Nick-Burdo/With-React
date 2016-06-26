@@ -5,8 +5,10 @@
 
 var gulp = require('gulp');
 var del = require('del');
-var browserify = require('browserify');
-var source = require('vinyl-source-stream');
+var webpack = require('webpack-stream');
+var webpackConfig = require('./webpack.config.js');
+var nodemon = require('gulp-nodemon');
+var path = require('path');
 var sass = require('gulp-sass');
 
 gulp.task('clean:js', function () {
@@ -14,19 +16,12 @@ gulp.task('clean:js', function () {
 });
 
 gulp.task('js', ['clean:js'], function () {
-    var options = {
-        debug: true
-    };
-
-    return browserify('./src/js/app.js', options)
-        .transform('babelify', {presets: ['react', 'es2015', 'stage-2']})
-        .bundle()
-        .on('error', function handleError(err) {
-            console.log(err.toString());
+    return gulp.src('./src/js/app.js')
+        .pipe(webpack(webpackConfig))
+        .on('error', function handleError() {
             this.emit('end'); // Recover from errors
         })
-        .pipe(source('app.min.js'))
-        .pipe(gulp.dest('./public/js'));
+        .pipe(gulp.dest('./public/js/'));
 });
 
 gulp.task('clean:css', function () {
@@ -39,10 +34,11 @@ gulp.task('css', ['clean:css'], function () {
         .pipe(gulp.dest('./public/css/'));
 });
 
-gulp.task('watch', ['build'], function () {
+gulp.task('build', ['js', 'css']);
+
+gulp.task('watch:build', function () {
     return gulp.watch('./src/**/*', ['build']);
 });
 
-gulp.task('build', ['js', 'css']);
-
-gulp.task('default', ['watch']);
+gulp.task('watch', ['build', 'watch:build']);
+gulp.task('default', ['build']);

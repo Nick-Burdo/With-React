@@ -5,9 +5,9 @@
 
 import React from 'react';
 
-const {Link} = require('react-router');
+import {Link} from 'react-router';
 
-module.exports = React.createClass({
+const MainLayout = React.createClass({
     render: function () {
         return (
             <div className="app">
@@ -36,3 +36,5 @@ module.exports = React.createClass({
         );
     }
 });
+
+export default MainLayout;
