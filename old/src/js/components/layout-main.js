@@ -18,7 +18,7 @@ const MainLayout = React.createClass({
                 <aside className="primary-aside">
                     <ul>
                         <li>
-                            <Link to="/" activeClassName="active">Home</Link>
+                            <Link to="/" activeClassName="active" onlyActiveOnIndex={true}>Home</Link>
                         </li>
                         <li>
                             <Link to="users" activeClassName="active">Users</Link>

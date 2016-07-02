@@ -1,18 +1,35 @@
 var path = require('path');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
-    entry: "./src/js/app.js",
+    entry: './src/js/index.js',
+
     output: {
-        filename: "app.min.js",
-        sourceMapFilename: "app.map"
+        path:  path.join(__dirname, 'public'),
+        //publicPath: '',
+        filename: 'js/bundle.js'
     },
-    devtool: '#source-map',
+    devtool: "source-map",
     module: {
         loaders: [
             {
-                loader: 'babel',
-                exclude: /node_modules/
+                test: /\.js$/,
+                exclude: /node_modules/,
+                loader: 'babel-loader?presets[]=es2015&presets[]=react'
+            },
+            {
+                test: /\.scss$/,
+                loader: ExtractTextPlugin.extract(["css?sourceMap", "sass?sourceMap"], {publicPath: '../'})
+            },
+            {
+                test: /\.jpg$|\.png$|\.gif$/,
+                loader: "file-loader?name=img/[name].[ext]"
             }
         ]
-    }
-}
+    },
+    plugins: [
+        new ExtractTextPlugin("css/style.css", {
+            allChunks: true
+        })
+    ]
+};

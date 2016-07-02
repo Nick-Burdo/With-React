@@ -1,0 +1,38 @@
+{
+  "name": "With-React",
+  "version": "0.0.0",
+  "description": "REACT and everything associated with him",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "http-server",
+    "build": "gulp build",
+    "watch": "gulp watch",
+    "start": "gulp && http-server"
+  },
+  "author": "Nick Burdo",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "express": "^4.13.4",
+    "babel-cli": "^6.5.1",
+    "babel-core": "^6.5.2",
+    "babel-loader": "^6.2.4",
+    "gulp-nodemon": "^2.0.6",
+    "gulp-rename": "^1.2.2",
+    "webpack": "^1.12.14",
+    "webpack-stream": "^3.1.0",
+    "http-server": "~0.9.0",
+    "gulp": "~3.9.1",
+    "del": "~2.2.1",
+    "gulp-sass": "~2.3.2",
+    "babel-preset-react": "~6.5.0",
+    "babel-preset-es2015": "~6.9.0",
+    "babel-preset-stage-2": "~6.5.0",
+    "react-dom": "~15.1.0",
+    "react": "~15.1.0",
+    "react-router": "~2.5.1",
+    "browserify": "~13.0.1",
+    "babelify": "~7.3.0",
+    "vinyl-source-stream": "~1.1.0"
+  }
+}

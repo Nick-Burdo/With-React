@@ -1,56 +1,19 @@
-/**
- * This is just a dummy server to facilidate our React SPA examples.
- * For a more professional setup of Express, see...
- * http://expressjs.com/en/starter/generator.html
- */
+var express = require('express');
+var path = require('path');
+var compression = require('compression');
 
-import express from 'express';
-import path from 'path';
-const app = express();
+var app = express();
 
+// serve our static stuff like index.css
+app.use(express.static(path.join(__dirname, 'public')));
 
-/**
- * Anything in public can be accessed statically without
- * this express router getting involved
- */
-
-app.use(express.static(path.join(__dirname, 'public'), {
-  dotfiles: 'ignore',
-  index: false
-}));
-
-
-/**
- * Always serve the same HTML file for all requests
- */
-
-app.get('*', function(req, res, next) {
-  console.log('Request: [GET]', req.originalUrl)
-  res.sendFile(path.resolve(__dirname, 'index.html'));
+// send all requests to index.html so browserHistory in React Router works
+app.get('*', function (req, res) {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-
-/**
- * Error Handling
- */
-
-app.use(function(req, res, next) {
-  console.log('404')
-  let err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+var PORT = process.env.PORT || 8080;
+app.listen(PORT, function () {
+    console.log('Production Express server running at localhost:' + PORT);
 });
-
-app.use(function(err, req, res, next) {
-  res.sendStatus(err.status || 500);
-});
-
-
-/**
- * Start Server
- */
-
-const port = 8080;
-app.listen(port);
-
-console.log('Visit: localhost:' + port);
+ 
