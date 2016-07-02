@@ -5,7 +5,7 @@
 
 import React from 'react';
 
-const Home = React.createClass({
+export default React.createClass({
     render: function () {
         return (
             <div className="home-page">
@@ -15,4 +15,3 @@ const Home = React.createClass({
     }
 });
 
-export default Home;

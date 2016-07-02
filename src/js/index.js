@@ -11,31 +11,30 @@
 //var Link = window.ReactRouter.Link;
 //var browserHistory = window.ReactRouter.browserHistory;
 
-require('../sass/style.scss');
-require('../img/1287.png');
+import '../sass/style.scss';
+import '../img/1287.png';
 
 
 import React from 'react';
-import ReactDOM from 'react-dom';
-
-var { Router, Route, IndexRoute, browserHistory } = require('react-router');
+import {render} from 'react-dom';
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
 import MainLayout from './components/MainLayout';
 import SearchLayout from './components/SearchLayout';
 import Home from './components/Home';
-import UserList from './components/UserList';
+import UserListContainer from './components/UserListContainer';
 import WidgetList from './components/WidgetList';
 
 
-
-ReactDOM.render(
+render(
     <Router history={browserHistory}>
         <Route path="/" component={MainLayout}>
             <IndexRoute component={Home}/>
             <Route component={SearchLayout}>
-                <Route path="users" component={UserList}/>
+                <Route path="users" component={UserListContainer}/>
                 <Route path="widgets" component={WidgetList}/>
             </Route>
         </Route>
     </Router>,
-    document.getElementById('content'));
+    document.getElementById('content')
+);

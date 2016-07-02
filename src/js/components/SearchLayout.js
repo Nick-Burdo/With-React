@@ -5,7 +5,7 @@
 
 import React from 'react';
 
-const SearchLayout = React.createClass({
+export default React.createClass({
     render: function () {
         return (
             <div className="search">
@@ -23,5 +23,4 @@ const SearchLayout = React.createClass({
     }
 });
 
-export default SearchLayout;
 

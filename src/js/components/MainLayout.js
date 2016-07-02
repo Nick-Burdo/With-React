@@ -4,10 +4,9 @@
 'use strict';
 
 import React from 'react';
-
 import {Link} from 'react-router';
 
-const MainLayout = React.createClass({
+export default React.createClass({
     render: function () {
         return (
             <div className="app">
@@ -24,10 +23,10 @@ const MainLayout = React.createClass({
                             <Link to="/" activeClassName="active" onlyActiveOnIndex={true}>Home</Link>
                         </li>
                         <li>
-                            <Link to="users" activeClassName="active">Users</Link>
+                            <Link to="/users" activeClassName="active">Users</Link>
                         </li>
                         <li>
-                            <Link to="widgets" activeClassName="active">Widgets</Link>
+                            <Link to="/widgets" activeClassName="active">Widgets</Link>
                         </li>
                     </ul>
                 </aside>
@@ -40,4 +39,3 @@ const MainLayout = React.createClass({
     }
 });
 
-export default MainLayout;

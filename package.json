@@ -4,9 +4,12 @@
   "description": "REACT and everything associated with him",
   "main": "index.js",
   "scripts": {
-    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
-    "start:dev": "webpack-dev-server --inline --content-base public --history-api-fallback -d --port 3000",
-    "start:prod": "webpack && node server.js"
+    "start": "if-env NODE_ENV=production && npm run prod || npm run serve",
+    "start:dev": "webpack-dev-server --inline --content-base public --history-api-fallback -d --port 3000 && start:db",
+    "start:prod": "webpack && node server.js",
+    "start:db": "node json-server.js",
+    "serve": "gulp serve",
+    "prod": "gulp prod"
   },
   "author": "Nick Burdo",
   "license": "ISC",
@@ -15,6 +18,7 @@
     "express": "~4.14.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "if-env": "~1.0.0",
+    "json-server": "^0.8.14",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
     "react-router": "^2.0.0"
@@ -26,11 +30,15 @@
     "babel-preset-react": "^6.5.0",
     "css-loader": "~0.23.1",
     "file-loader": "^0.9.0",
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2",
     "http-server": "^0.8.5",
+    "lodash": "^4.13.1",
     "node-sass": "^3.8.0",
     "sass-loader": "^4.0.0",
     "style-loader": "~0.13.1",
     "webpack": "^1.12.13",
-    "webpack-dev-server": "^1.14.1"
+    "webpack-dev-server": "^1.14.1",
+    "whatwg-fetch": "^1.0.0"
   }
 }

@@ -24,11 +24,37 @@ Public files (JS, CSS & images) are stored in the server memory and written to d
 The source SCSS file for conversion to CSS embed in the `index.js`:
 
 ```
-require('../sass/style.scss');
+import '../sass/style.scss';
 ```
 
 **To embed images** needed for each record in the `index.js`:
 
 ```
-require('../img/picture.png');
+import '../img/picture.png';
 ```
+
+### Libraries
+
+#### react router
+
+`npm react-router`
+
+Complete routing library for React.
+
+[https://github.com/reactjs/react-router](https://github.com/reactjs/react-router)
+
+#### fetch
+
+`npm whatwg-fetch`
+
+AJAX request with promises
+
+[https://github.com/github/fetch](https://github.com/github/fetch)
+
+#### lodash
+
+`npm lodash`
+
+Utilites for Arrays, Collections, Objects, ets
+
+[https://lodash.com/docs](https://lodash.com/docs)
