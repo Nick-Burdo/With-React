@@ -14,12 +14,12 @@ export default function (props) {
                     <Link to={'/users/' + user.id} className="user-list-prop">
                         {user.name}
                     </Link>
-                        <span className="user-list-prop">
-                            {user.active ? 'Active' : 'Not active'}
-                        </span>
-                    <button onClick={props.toggleActive.bind(null, user.id)}>
-                        Toggle Active
-                    </button>
+
+                    <a href="#"
+                       className="user-list-delete-btn"
+                       onClick={props.deleteUser.bind(null, user.id)}>
+                        x
+                    </a>
                 </li>
             ))}
         </ul>

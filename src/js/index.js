@@ -5,36 +5,17 @@
  * @since 2.1.1
  */
 
-//var Router = window.ReactRouter.Router;
-//var Route = window.ReactRouter.Route;
-//var IndexRoute = window.ReactRouter.IndexRoute;
-//var Link = window.ReactRouter.Link;
-//var browserHistory = window.ReactRouter.browserHistory;
-
 import '../sass/style.scss';
 import '../img/1287.png';
 
 
 import React from 'react';
 import {render} from 'react-dom';
-import { Router, Route, IndexRoute, browserHistory } from 'react-router';
-
-import MainLayout from './components/MainLayout';
-import SearchLayout from './components/SearchLayout';
-import Home from './components/Home';
-import UserListContainer from './components/UserListContainer';
-import WidgetList from './components/WidgetList';
-
+import { Provider } from 'react-redux';
+import store from './store';
+import router from './router';
 
 render(
-    <Router history={browserHistory}>
-        <Route path="/" component={MainLayout}>
-            <IndexRoute component={Home}/>
-            <Route component={SearchLayout}>
-                <Route path="users" component={UserListContainer}/>
-                <Route path="widgets" component={WidgetList}/>
-            </Route>
-        </Route>
-    </Router>,
+    <Provider store={store}>{router}</Provider>,
     document.getElementById('content')
 );
