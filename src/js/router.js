@@ -18,7 +18,7 @@ import WidgetList from './components/views/WidgetList';
 import ReduxTutorialContainer from './components/containers/ReduxTutorialContainer';
 
 
-export default (
+const router = (
     <Router history={browserHistory}>
         <Route path="/" component={MainLayout}>
             <IndexRoute component={Home}/>
@@ -31,4 +31,6 @@ export default (
             </Route>
         </Route>
     </Router>
-)
+);
+
+export default router;

@@ -5,16 +5,16 @@
 
 import { combineReducers } from 'redux';
 
-// Reducers
-import userReducer from './userReducer';
-//import widgetReducer from './widget-reducer';
-//import searchLayoutReducer from './search-layout-reducer';
+import visibilityFilter from './visibilityFilter';
+import todos from './todos';
 
-// Combine Reducers
-export default combineReducers({
-    userState: userReducer
-    //widgetState: widgetReducer,
-    //searchLayoutState: searchLayoutReducer
+const reducers = combineReducers({
+    visibilityFilter,
+    todos
 });
+
+
+
+export default reducers;
 
 

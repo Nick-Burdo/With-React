@@ -12,6 +12,12 @@ export const USER_PROFILE_SUCCESS = 'USER_PROFILE_SUCCESS';
 export const GET_WIDGETS_SUCCESS = 'GET_WIDGETS_SUCCESS';
 export const DELETE_WIDGET_SUCCESS = 'DELETE_WIDGET_SUCCESS';
 
+// Tutorials
+    // To-do
+export const ADD_TODO = 'ADD_TODO';
+export const TOGGLE_TODO = 'TOGGLE_TODO';
+export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER';
+
 // Search Layout
 export const LOAD_SEARCH_LAYOUT = 'LOAD_SEARCH_LAYOUT';
 

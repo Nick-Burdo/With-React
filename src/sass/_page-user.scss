@@ -1,6 +1,7 @@
 .user-list li {
   padding: 10px;
-  border-bottom: solid 1px #bbb;
+  border-bottom: solid 1px $border-color
+;
   display: flex;
 
   .user-list-prop {

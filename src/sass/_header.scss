@@ -1,8 +1,8 @@
 .primary-header {
   padding: 20px;
   display: flex;
-  background: orange;
-  //background: #f8f800;
+  color: $primary-color;
+  background: $primary-bg-color;
 
   .logo {
     width: 100px;

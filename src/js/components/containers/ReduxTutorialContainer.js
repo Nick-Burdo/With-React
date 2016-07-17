@@ -5,6 +5,10 @@
 
 import React from 'react';
 
+import AddTodoForm from '../views/AddTodoForm';
+import TodoListContainer from '../containers/TodoListContainer';
+import TodoFooter from '../views/TodoFooter';
+
 export default React.createClass({
     getInitialState: function () {
         return {};
@@ -16,6 +20,12 @@ export default React.createClass({
         return (
             <div className="redux-tutorial">
                 <h3>Redux tutorial</h3>
+
+                <AddTodoForm />
+
+                <TodoListContainer />
+
+                <TodoFooter />
             </div>
         );
     }
