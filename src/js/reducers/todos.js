@@ -8,36 +8,8 @@ import {last} from 'lodash';
 
 import * as types from '../actions/action-types';
 
-const initialState = [
-    {
-        id: 1,
-        text: 'Todo # 1 text',
-        completed: false
-    },
-    {
-        id: 2,
-        text: 'Todo # 2 text',
-        completed: true
-    },
-    {
-        id: 3,
-        text: 'Todo # 3 text',
-        completed: false
-    },
-    {
-        id: 4,
-        text: 'Todo # 4 text',
-        completed: false
-    },
-    {
-        id: 5,
-        text: 'Todo # 5 text',
-        completed: false
-    }
-];
 
-
-//const initialState = [];
+const initialState = [];
 
 const todos = function (state = initialState, action) {
     let newState = [...state];

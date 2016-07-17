@@ -5,7 +5,7 @@
 
 import React from 'react';
 
-import AddTodoForm from '../views/AddTodoForm';
+import AddTodoContainer from '../containers/AddTodoContainer';
 import TodoListContainer from '../containers/TodoListContainer';
 import TodoFooter from '../views/TodoFooter';
 
@@ -21,7 +21,7 @@ export default React.createClass({
             <div className="redux-tutorial">
                 <h3>Redux tutorial</h3>
 
-                <AddTodoForm />
+                <AddTodoContainer />
 
                 <TodoListContainer />
 
