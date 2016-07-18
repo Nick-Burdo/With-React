@@ -31,3 +31,35 @@ export function setVisibilityFilter(filter) {
         payload: filter
     }
 }
+
+export function selectSubreddit(subreddit) {
+    return {
+        type: types.SELECT_SUBREDDIT,
+        payload: subreddit
+    }
+}
+
+export function invalidateSubreddit(subreddit) {
+    return {
+        type: types.INVALIDATE_SUBREDDIT,
+        payload: subreddit
+    }
+}
+
+export function requestPosts(subreddit) {
+    return {
+        type: types.REQUEST_POSTS,
+        payload: subreddit
+    }
+}
+
+export function receivePosts(subreddit, json) {
+    return {
+        type: types.RECEIVE_POSTS,
+        payload: {
+            subreddit: subreddit,
+            posts: json.data.children.map(child => child.data),
+            receivedAt: Date.now()
+        }
+    }
+}
