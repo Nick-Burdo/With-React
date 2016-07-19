@@ -22,7 +22,6 @@ import router from './router';
 import reducers from './reducers/index';
 
 
-import {selectSubreddit, fetchPosts} from './actions/todo-actions';
 
 
 const loggerMiddleware = createLogger();
@@ -41,8 +40,3 @@ render(
     document.getElementById('content')
 );
 
-
-store.dispatch(selectSubreddit('reactjs'));
-store.dispatch(fetchPosts('reactjs')).then(() =>
-    console.log(store.getState())
-);

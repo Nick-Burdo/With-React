@@ -8,7 +8,7 @@ import { combineReducers } from 'redux';
 import * as types from '../actions/action-types';
 
 
-function selectedSubedit(state = 'reactjs', action) {
+function selectedSubreddit(state = 'reactjs', action) {
     switch (action.type) {
         case types.SELECT_SUBREDDIT:
             return action.payload;
@@ -18,4 +18,4 @@ function selectedSubedit(state = 'reactjs', action) {
 }
 
 
-export default selectedSubedit
+export default selectedSubreddit

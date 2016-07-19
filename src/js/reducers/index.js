@@ -7,13 +7,13 @@ import { combineReducers } from 'redux';
 
 import visibilityFilter from './visibilityFilter';
 import todos from './todos';
-import selectedSubedit from './selectedSubedit';
+import selectedSubreddit from './selectedSubreddit';
 import postsBySubreddit from './postsBySubreddit';
 
 const reducers = combineReducers({
     visibilityFilter,
     todos,
-    selectedSubedit,
+    selectedSubreddit,
     postsBySubreddit
 });
 

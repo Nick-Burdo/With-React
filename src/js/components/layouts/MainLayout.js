@@ -32,7 +32,12 @@ export default React.createClass({
                             <li>
                                 <Link to="/tutorial/redux" activeClassName="active">Tutorials</Link>
                                 <ul className="sub-menu">
-                                    <Link to="/tutorial/redux" activeClassName="active">Redux Tutorial</Link>
+                                    <li>
+                                        <Link to="/tutorial/redux" activeClassName="active">Redux Tutorial</Link>
+                                    </li>
+                                    <li>
+                                        <Link to="/tutorial/reddit" activeClassName="active">Reddit API</Link>
+                                    </li>
                                 </ul>
                             </li>
                         </ul>

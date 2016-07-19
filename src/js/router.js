@@ -16,6 +16,7 @@ import Home from './components/views/Home';
 import UserListContainer from './components/containers/UserListContainer';
 import WidgetList from './components/views/WidgetList';
 import ReduxTutorialContainer from './components/containers/ReduxTutorialContainer';
+import RedditContainer from './components/containers/RedditContainer';
 
 
 const router = (
@@ -28,6 +29,7 @@ const router = (
             </Route>
             <Route component={TutorialLayout} path="tutorial">
                 <Route path="redux" component={ReduxTutorialContainer}/>
+                <Route path="reddit" component={RedditContainer}/>
             </Route>
         </Route>
     </Router>
